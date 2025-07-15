@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-export default function Navbar() {
+export default function Footer() {
   return (
     <>
       <footer className="bg-background text-white grid grid-cols md:grid-cols-2 lg:grid-cols-4 gap-6 py-12 px-4 sm:px-6 md:px-12 xl:px-24">
