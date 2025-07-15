@@ -1,9 +1,19 @@
 "use client"
 
 import Link from "next/link"
-import * as React from "react"
+import React from "react"
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header className="bg-background backdrop-blur-md flex border-b border-gray-100 px-4 sm:px-6 md:px-12 xl:px-24 py-4 sticky top-0 z-50 items-center justify-between shadow-sm">
       <div className="flex w-full mx-auto items-center justify-between">
